@@ -1,17 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// react17 调用
+// 同步模式
+// ReactDOM.render(<App />,  document.getElementById('root'))
+// 异步模式
+const root = document.getElementById('root')
+ReactDOM.unstable_createRoot(root).render(<App />)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+
+// react18 调用
+// import ReactDOM from 'react-dom/client';
+// root.render(
+//   // 此方法打开 render 两次
+//   // <React.StrictMode>  
+//     <App />
+//   // </React.StrictMode>
+// );
